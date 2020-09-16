@@ -1,0 +1,70 @@
+@media (-webkit-min-device-pixel-ratio: 1.5),(min-device-aspect-ratio: 1.5) {
+    .border-1px{
+        &::after{
+            transform:scaleY(0.7);    //1.5 * 0.7接近1
+        }
+    }
+}   
+
+@media (-webkit-min-device-pixel-ratio: 2),(min-device-aspect-ratio: 2) {
+    .border-1px{
+        &::after{
+            transform:scaleY(0.5);    //2 * 0.5 = 1
+        }
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2.5),(min-device-aspect-ratio: 2.5) {
+    .border-1px{
+        &::after{
+            transform:scaleY(0.4);    //2.5 * 0.4 = 1
+        }
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3),(min-device-aspect-ratio: 3) {
+    .border-1px{
+        &::after{
+            transform:scaleY(0.333);    //3 * 0.333 接近 1
+        }
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3.5),(min-device-aspect-ratio: 3.5) {
+    .border-1px{
+        &::after{
+            transform:scaleY(0.2857);    //3.5 * 0.2857 接近 1
+        }
+    }
+}
+
+
+
+@mixin border-bottom($height,$color) {
+    position:relative;
+  
+    &::after{
+      position: absolute;
+      display: block;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      border-top: $height solid $color;
+      content: '';
+    }
+  }
+  
+  
+@mixin border-top($height,$color) {
+    position:relative;
+
+    &::after{
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-top: $height solid $color;
+    content: '';
+    }
+  }
